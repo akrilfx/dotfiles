@@ -1,0 +1,13 @@
+[http]
+	sslverify = false
+[user]
+	name = akril
+	email = akrilfx@gmail.com
+[color]
+	branch = auto
+	status = auto
+	diff = auto
+	interactive = auto
+	ui = auto
+[core]
+	ignorefiles = /var/mobile/.gitignore

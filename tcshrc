@@ -1,0 +1,13 @@
+#
+# .aliases
+
+# custom aliases
+if (-r $HOME/.tcshrc_aliases) source $HOME/.tcshrc_aliases
+
+# PATH
+#setenv PATH=${PATH}:$HOME/.local/bin
+
+# custom prompt
+set prompt="%{\033[1;36m%}[%n@%m]%{\033[0m%} %{\033[1;32m%}%~%{\033[0m%} >> "
+
+setenv GIT_SSL_NO_VERIFY true
