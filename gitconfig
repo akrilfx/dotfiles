@@ -10,4 +10,4 @@
 	interactive = auto
 	ui = auto
 [core]
-	ignorefiles = /var/mobile/.gitignore
+	ignorefiles = ~/.gitignore
