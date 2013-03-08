@@ -1,3 +1,9 @@
+#
+# custom .bashrc
+#
+#
+echo "-------- load .bashrc "
+
 if [[ $- != *i* ]] ; then
 # Shell is non-interactive.  Be done now!
   return
@@ -27,15 +33,13 @@ esac
 export LANGUAGE=en_US.UTF-8
 
 # PROMPT
-__git_ps1 () 
-{ 
+__git_ps1 ()
+{
   local b="$(git symbolic-ref HEAD 2>/dev/null)";
   if [ -n "$b" ]; then
     printf " (%s)" "${b##refs/heads/}";
   fi
 }
-
-#PS1="\h\$(__git_ps1)$ "
 
 # SHELL COLORS
 RED="\[\033[0;31m\]"
@@ -43,7 +47,7 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 BLUE="\[\033[0;34m\]"
 END="\[\e[0m\]"
-PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\W$RED"' $(__git_ps1 " (%s)") '"\$$END "
+PS1="$RED.:$GREEN\u@\h$RED:. $BLUE\w$RED"' $(__git_ps1 " (%s)") '"\$$END "
 #PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # LOAD ALIASES
@@ -53,15 +57,16 @@ then
 fi
 
 # PATH
-if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  export PATH=$HOME/.local/bin:${PATH}
-fi
-
-# PYTHON PATH
-if [[ ":$PYTHONPATH:" != *":$HOME/Documents/python:"* ]]; then
-  export PYTHONPATH=$HOME/Documents/python
-fi
+export PATH=/usr/local/bin:$HOME/vfxtools/bin:${PATH}
 
 # VIRUTALENVWRAPPER
 export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper.sh
+
+# LESS
+export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
+# HOUDINI SOURCE FILE
+source ${HOME}/vfxtools/houdini/houdini_setup_bash
+source ${HOME}/vfxtools/bin/houdinienv

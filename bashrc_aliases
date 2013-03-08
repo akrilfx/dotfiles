@@ -2,8 +2,9 @@
 #
 
 # shell #aliases
-alias rm="rm -v \!*"
-alias mv="mv -v \!*"
+alias rm="rm -v"
+alias mv="mv -v"
+alias ls="ls -G"
 alias l="ls -l -h -F"
 alias ll="ls -l -h -F"
 alias lll="ls -l -h -F -L -a"
@@ -37,8 +38,11 @@ alias cdl='cd `/bin/ls -trF | grep \[/@\]$ | tr -d @ | tail -1`'
 #alias cdl='cd `/bin/ls -trF \!* | grep \[/@\]$ | tr -d @ | tail -1`'
 alias dirs="dirs -v"
 alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 
 alias env="/usr/bin/env | sort"
+alias vfx="cd $HOME/vfxtools/"
 
 alias lsd='ls -1 \!* | grep \[/@\]$'
 alias cath='cat ~/.history | grep \!*'
@@ -47,6 +51,15 @@ alias cath='cat ~/.history | grep \!*'
 # DJANSO SPECIFICS ALIASES
 alias djr='./manage.py runserver'
 alias djs='./manage.py shell'
+
+# GIT aliases
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gd='git diff | kate'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
 
 ##alias mm "maya \!* >& /usr/tmp/mayaErrors.$USER.txt &"
 ##alias mmo "cat /usr/tmp/mayaErrors.$USER.txt"

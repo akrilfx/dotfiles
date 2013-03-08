@@ -15,7 +15,8 @@ alias dj27 'source $HOME/.virtualenvs/django_2.7/bin/activate.csh'
 
 alias env '/usr/bin/env | sort'
 
-alias ls ls -CF --si --color=tty
+#alias ls ls -CF --si --color=tty
+alias ls ls -G
 alias l 'ls -l'
 alias ll 'ls -l'
 alias la 'ls -la'
